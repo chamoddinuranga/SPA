@@ -5,6 +5,7 @@
     <title>SPA</title>
   <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
 
+
 </head>
 <body style="background-image: url('assets/images/image4.jpg'); background-size: cover;">
 <!--navigation Start-->
@@ -40,7 +41,6 @@
 <!--navigation End-->
 
 <!--Dashboard Start-->
-
   <section  class="container-fluid" id="dashboardContent">
     <div  class="container">
       <form>
@@ -56,8 +56,6 @@
       </form>
     </div>
   </section>
-
-
 <!--Dashboard End-->
 
 <!--Customer manage start-->
@@ -70,13 +68,13 @@
 
         <!-- customer Id-->
 
-        <input aria-describedby="button-addon2" aria-label="Recipient's username" class="form-control"
+        <input aria-describedby="button-addon2" aria-label="Recipient's username" class="form-control" id="customer_id"
                placeholder="Customer Id" type="text">
 
-        <button class="btn btn-primary"  type="button"><i
+        <button class="btn btn-primary" id="btnSearchCustomer" type="button"><i
                 class="bi bi-search m-2"></i>Search
         </button>
-        <button style="background-color: #24ea24;color: black" type="button" class="btn btn-primary mx-5">+ New Customer</button>
+        <button style="background-color: #24ea24;color: black" type="button" id="btnAddCustomer" class="btn btn-primary mx-5">+ New Customer</button>
 
       </div>
     </div>
@@ -88,26 +86,26 @@
     <div class="row gap-3  mx-5 col-5 col-md-4 col-lg-3">
 
       <div class="row">
-        <input type="text" class="form-control" placeholder="Customer name" aria-label="Customer name">
+        <input type="text" class="form-control" id="customer_name" placeholder="Customer name" aria-label="Customer name">
       </div>
       <div class="row">
-        <input type="text" class="form-control" placeholder="Customer address" aria-label="Customer address">
+        <input type="text" class="form-control" id="customer_address" placeholder="Customer address" aria-label="Customer address">
       </div>
       <div class="row">
-        <input type="text" class="form-control" placeholder="Customer salary" aria-label="Customer salary">
+        <input type="text" class="form-control" id="customer_salary" placeholder="Customer salary" aria-label="Customer salary">
       </div>
     </div>
   </section>
   <br>
   <div style="margin-left: 49px;">
 
-    <button class="btn btn-danger mt-2" data-bs-target="#removeCustomer" data-bs-toggle="modal"
+    <button class="btn btn-danger mt-2" id="btnDeleteCustomer" data-bs-target="#removeCustomer" data-bs-toggle="modal"
             type="button"><i class="bi bi-person-plus-fill m-2"></i>Delete Customer
     </button>
-    <button class="btn btn-warning mt-2" data-bs-target="#updateCustomer" data-bs-toggle="modal"
+    <button class="btn btn-warning mt-2" id="btnUpdateCustomer" data-bs-target="#updateCustomer" data-bs-toggle="modal"
             type="button"><i class="bi bi-person-plus-fill m-2"></i>Update Customer
     </button>
-    <button class="btn btn-secondary mt-2"  type="button"><i class="bi bi-backspace m-2"></i>Clear
+    <button class="btn btn-secondary mt-2" id="btnClearField"  type="button"><i class="bi bi-backspace m-2"></i>Clear
     </button>
   </div>
 
@@ -118,12 +116,13 @@
           <table class="table table-light table-hover text-center table-bordered">
             <thead class="table-dark">
             <tr>
-              <th>Customer ID</th>
-              <th>Name</th>
-              <th>Address</th>
-              <th>Salary</th>
+              <th scope="col" id="i">Customer ID</th>
+              <th scope="col" id="n">Name</th>
+              <th scope="col" id="g">Address</th>
+              <th scope="col" id="t">Salary</th>
             </tr>
             </thead>
+            <tbody id="customerTableBody"></tbody>
           </table>
         </div>
       </div>
@@ -143,12 +142,12 @@
         <!-- customer Id-->
 
         <input aria-describedby="button-addon2" aria-label="Recipient's username" class="form-control"
-               placeholder="Item Code" type="text">
+               id="Item_code" placeholder="Item Code" type="text">
 
-        <button class="btn btn-primary"  type="button"><i
+        <button id="btn_Search_Item" class="btn btn-primary"  type="button"><i
                 class="bi bi-search m-2"></i>Search
         </button>
-        <button style="background-color: #24ea24;color: black" type="button" class="btn btn-primary mx-5">+ New Item</button>
+        <button style="background-color: #24ea24;color: black" type="button" class="btn btn-primary mx-5" id="btn_Add_Item">+ New Item</button>
 
       </div>
     </div>
@@ -160,23 +159,23 @@
     <div class="row gap-3  mx-5 col-5 col-md-4 col-lg-3">
 
       <div class="row">
-        <input type="text" class="form-control" placeholder="Item Name" aria-label="Customer name">
+        <input type="text" class="form-control" id="Item_Name" placeholder="Item Name" aria-label="Customer name">
       </div>
       <div class="row">
-        <input type="text" class="form-control" placeholder="Item Qty" aria-label="Customer address">
+        <input type="text" class="form-control" id="Item_Qty" placeholder="Item Qty" aria-label="Customer address">
       </div>
       <div class="row">
-        <input type="text" class="form-control" placeholder="Unit Price" aria-label="Customer salary">
+        <input type="text" class="form-control" id="Item_Price" placeholder="Unit Price" aria-label="Customer salary">
       </div>
     </div>
   </section>
   <br>
   <div style="margin-left: 49px;">
 
-    <button class="btn btn-danger mt-2" data-bs-target="#removeItem" data-bs-toggle="modal"
+    <button class="btn btn-danger mt-2" id="Delete_Item" data-bs-target="#removeItem" data-bs-toggle="modal"
             type="button"><i class="bi bi-person-plus-fill m-2"></i>Delete Item
     </button>
-    <button class="btn btn-warning mt-2" data-bs-target="#updateItem" data-bs-toggle="modal"
+    <button class="btn btn-warning mt-2" id="Update_Item" data-bs-target="#updateItem" data-bs-toggle="modal"
             type="button"><i class="bi bi-person-plus-fill m-2"></i>Update Item
     </button>
     <button class="btn btn-secondary mt-2"  type="button"><i class="bi bi-backspace m-2"></i>Clear
@@ -190,12 +189,13 @@
           <table class="table table-light table-hover text-center table-bordered">
             <thead class="table-dark">
             <tr>
-              <th>Item Code</th>
-              <th>Name</th>
-              <th>Qty</th>
-              <th>Price</th>
+              <th scope="col" id="item-code">Item Code</th>
+              <th scope="col" id="item-name">Name</th>
+              <th scope="col" id="item-qty">Qty</th>
+              <th scope="col" id="item-price">Price</th>
             </tr>
             </thead>
+            <tbody id="item_table_body"></tbody>
           </table>
         </div>
       </div>
@@ -217,28 +217,28 @@
           <div class="modal-body">
             <div class="row">
               <div class="col">
-                <label id="lblOrderId" class="form-label fw-bold" for="OID"> Order ID:</label>
-                <input class="form-control" id="OID" value="O001" type="text">
+                <label id="lblOrderId" class="form-label fw-bold" for="OrderId"> Order ID:</label>
+                <input class="form-control" id="OrderId"  type="text">
               </div>
               <div class="col">
-                <label class="form-label fw-bold" for="iDate">Date:</label>
-                <input class="form-control" id="iDate" type="date">
+                <label class="form-label fw-bold" for="Order-Date">Date:</label>
+                <input class="form-control" id="Order-Date" type="date">
               </div>
             </div>
             <div class="row mt-3">
               <div class="col">
-                <label class="form-label fw-bold" for="cmb">Customer ID:</label>
-                <select class="form-select" id="cmb">
+                <label class="form-label fw-bold" for="select-Customer-Id">Customer ID:</label>
+                <select class="form-select" id="select-Customer-Id">
                   <option selected>Selected Customer Id</option>
 
                 </select>
               </div>
               <div class="col">
-                <label class="form-label fw-bold" for="cusName">Customer Name:</label>
-                <input class="form-control" id="cusName" type="text">
+                <label class="form-label fw-bold" for="Customer-Name">Customer Name:</label>
+                <input class="form-control" id="Customer-Name" type="text">
               </div>
             </div>
-            <div class="row mt-3 mb-3">
+            <!--<div class="row mt-3 mb-3">
               <div class="col">
                 <label class="form-label fw-bold" for="salary">Salary:</label>
                 <input class="form-control" id="salary"  type="number">
@@ -247,7 +247,7 @@
                 <label class="form-label fw-bold" for="address">Address:</label>
                 <input class="form-control" id="address"  type="text">
               </div>
-            </div>
+            </div>-->
           </div>
         </div>
       </div>
@@ -262,8 +262,8 @@
           <div class="modal-body">
             <div class="row">
               <div class="col">
-                <label class="form-label fw-bold" for="idCmb">Item:</label>
-                <select class="form-select" id="idCmb">
+                <label class="form-label fw-bold" for="select-item-code">Item:</label>
+                <select class="form-select" id="select-item-code">
                   <!-- <option selected>I001</option>
                    <option value="1">I001</option>
                    <option value="2">I002</option>
@@ -282,19 +282,19 @@
                 <input class="form-control" id="qtyOnHand" type="number">
               </div>
               <div class="col">
-                <label class="form-label fw-bold" for="price">Price:</label>
-                <input class="form-control" id="price" p type="text">
+                <label class="form-label fw-bold" for="Price-order">Price:</label>
+                <input class="form-control" id="Price-order"  type="text">
               </div>
             </div>
             <div class="row mt-3">
               <div class="col">
-                <label class="form-label fw-bold" for="oQty">Order Quantity:</label>
-                <input class="form-control" id="oQty"
+                <label class="form-label fw-bold" for="Order-Qty">Order Quantity:</label>
+                <input class="form-control" id="Order-Qty"
                        type="number">
               </div>
             </div>
             <div class="row mt-3 mb-1 justify-content-center container col-xl-6">
-              <button id="addBtn" class="btn btn-success me-md-2" type="button">Add Item</button>
+              <button id="btnAddToChart" class="btn btn-success me-md-2" type="button">Add Item</button>
             </div>
           </div>
         </div>
@@ -309,7 +309,8 @@
                 <p class="h2 d-inline">
                   Total :
                 </p>
-                <p id="lblFullTotal" class="h2 d-inline">0 LKR</p>
+<!--                <p id="lblFullTotal" class="h2 d-inline">0 LKR</p>-->
+                <h4 class="h4">0 LKR</h4>
               </div>
             </div>
             <div class="row mt-3">
@@ -323,8 +324,8 @@
             <div class="row mt-3">
 
               <div class="col">
-                <label class="form-label fw-bold" for="cash1">Cash:</label>
-                <input class="form-control" id="cash1"  type="text">
+                <label class="form-label fw-bold" for="cash">Cash:</label>
+                <input class="form-control" id="cash"  type="text">
               </div>
               <div class="col">
                 <label class="form-label fw-bold" for="discount">Discount:</label>
@@ -334,12 +335,12 @@
             <div class="row mt-3">
 
               <div class="col">
-                <label class="form-label fw-bold" for="balance">Balance:</label>
-                <input class="form-control" id="balance"  type="text">
+                <label class="form-label fw-bold" for="Balance">Balance:</label>
+                <input class="form-control" id="Balance"  type="text">
               </div>
             </div>
             <div id="btnPurchase" class="row mt-3 mb-1 justify-content-center container col-xl-6">
-              <button class="btn btn-info" type="button">Purchase</button>
+              <button class="btn btn-info" id="btnPay" type="button">Purchase</button>
             </div>
           </div>
         </div>
@@ -352,14 +353,14 @@
       <table class="table table-primary table-striped">
         <thead>
         <tr>
-          <th>Item Code</th>
-          <th>Item Name</th>
-          <th>Price</th>
-          <th>QTY</th>
-          <th>Total</th>
+          <th scope="col" id="orderItemCode">Item Code</th>
+          <th scope="col" id="orderItemName">Item Name</th>
+          <th scope="col" id="orderItemPrice">Price</th>
+          <th scope="col" id="orderItemQty">QTY</th>
+          <th scope="col" id="orderItemTotal">Total</th>
         </tr>
         </thead>
-        <tbody id="OrderTB">
+        <tbody id="tOrderBody">
 
         </tbody>
       </table>
@@ -370,12 +371,21 @@
 <!--Order Manage End-->
 
 <script src="assets/jQuery/jquery-3.6.4.min.js"></script>
+<script type="module" src="model/customerModel.js"></script>
+<script type="module" src="model/itemModel.js"></script>
+<script type="module" src="model/orderModel.js"></script>
+<script type="module" src="controller/customerController.js"></script>
+<script type="module" src="controller/ItemController.js"></script>
+<script type="module" src="model/PlaceOrderModel.js"></script>
+<script type="module" src="controller/PlaceOrderController.js"></script>
 <script>
+
   $("#dashboardContent").css("display","block");
   $("#customerContent").css("display","none");
   $("#itemContent").css("display","none");
   $("#orderContent").css("display","none");
 
+  // display only home
   $("#home").click(function (){
     $("#dashboardContent").css("display","block");
     $("#customerContent").css("display","none");
@@ -408,6 +418,24 @@
     $("#home").text("Order Form");
   })
 
+  // Add Customer
+
+  // Select Button
+ /* $("#btnAddCus").click(function () {
+
+    // gather Customer information
+    let customerId = $("#txtCusId").val();
+    let customerName = $("#txtCusName").val();
+    let customerAddress = $("#txtCusAddress").val();
+    let customerSalary = $("#txtCusSalary").val();
+
+    // create a html row
+    let row = `<tr><td>${customerId}</td><td>${customerName}</td><td>${customerAddress}</td><td>${customerSalary}</td></tr>`;
+
+    // select the tbale body and append the row
+    $("#customerTable").append(row);
+
+  });*/
 </script>
 </body>
 </html>
